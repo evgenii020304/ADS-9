@@ -183,7 +183,7 @@ void BST<T>::print() {
 
 template<typename T>
 int BST<T>::depth() {
-  return heightTree(root);
+  return depthTree(root);
 }
 
 template<typename T>
