@@ -71,7 +71,7 @@ int BST<T>::depthTree(Node* root) {
   if (root == nullptr) {
     return 0;
   } else {
-    return 1 + max(heightTree(root->left), heightTree(root->right));
+    return 1 + std::max(depthTree(root->left), depthTree(root->right));
   }
 }
 
