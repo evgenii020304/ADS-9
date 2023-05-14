@@ -19,7 +19,7 @@ class BST {
   Node* root;
   Node* addNode(Node*, T);
   void printTree(Node*)const;
-  int heightTree(Node*);
+  int depthTree(Node*);
   int searchNode(Node*, T);
   void delTree(Node*);
   Node* delNode(Node*, T);
@@ -31,7 +31,7 @@ class BST {
   BST(const BST<T>& temp);
   void add(T);
   void print();
-  int  height();
+  int  depth();
   int  search(T);
   void clear();
   void remove(int value);
@@ -46,7 +46,7 @@ typename BST<T>::Node* BST<T>::addNode(Node* root, T value) {
     root->count = 1;
   } else  if (root->value > value) {
     root->left = addNode(root->left, value);
-  }	else if (root->value < value) {
+  } else if (root->value < value) {
     root->right = addNode(root->right, value);
   } else {
     root->count++;
@@ -67,7 +67,7 @@ void BST<T>::printTree(Node*) const {
 }
 
 template<typename T>
-int BST<T>::heightTree(Node* root) {
+int BST<T>::depthTree(Node* root) {
   if (root == nullptr) {
     return 0;
   } else {
@@ -182,7 +182,7 @@ void BST<T>::print() {
 }
 
 template<typename T>
-int BST<T>::height() {
+int BST<T>::depth() {
   return heightTree(root);
 }
 
