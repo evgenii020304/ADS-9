@@ -5,10 +5,10 @@
 #include  <cstdlib>
 #include  "bst.h"
 
-bst<std::string> makeTree(const char* filename) {
+BST<std::string> makeTree(const char* filename) {
   std::string word;
   std::ifstream text(filename);
-  bst<std::string>* tree = new bst<std::string>;
+  BST<std::string>* tree = new BST<std::string>;
   char str = ' ';
   while (!text.eof()) {
     while (str < 65 && (!text.eof())) {
