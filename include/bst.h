@@ -70,16 +70,8 @@ template<typename T>
 int BST<T>::depthTree(Node* root) {
   if (root == nullptr) {
     return 0;
-  }
-  if (root->left == nullptr && root->right == nullptr) {
-    return 0;
-  }
-  int left = depthTree(root->left);
-  int right = depthTree(root->right);
-  if (left > right) {
-    return left + 1;
   } else {
-    return right + 1;
+    return 1 + std::max(depthTree(root->left), depthTree(root->right));
   }
 }
 
@@ -191,7 +183,7 @@ void BST<T>::print() {
 
 template<typename T>
 int BST<T>::depth() {
-  return depthTree(root);
+  return depthTree(root)-1;
 }
 
 template<typename T>
